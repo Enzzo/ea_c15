@@ -11,6 +11,26 @@
 #include <trade.mqh>
 
 CTrade trade();
+
+enum ENUM_SIGNAL_DIRECTION{
+   NONE,
+   DOWN,
+   UP
+};
+
+enum ENUM_SIGNAL_STATUS{
+   EXPIRED,
+   READY
+};
+
+struct Signal{
+   long id;
+   ENUM_SIGNAL_DIRECTION direction;
+   ENUM_SIGNAL_STATUS status;
+};
+
+Signal signal(-1, NONE, EXPIRED);
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
